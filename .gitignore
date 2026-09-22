@@ -32,10 +32,17 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-
+!.env.example
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local audit backups
+.audit-backups/
+backup-*/
+/dualiscreative-auditoria.zip
+/dualis-phase-5-2.ps1
+/public/projects/fotos-institucionais/IMG_0600.MOV

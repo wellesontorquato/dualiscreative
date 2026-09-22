@@ -1,36 +1,247 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dualis Creative
 
-## Getting Started
+Site-portfólio da Dualis Creative, estúdio audiovisual focado em fotografia, filme, movimento e direção visual.
 
-First, run the development server:
+O projeto utiliza Next.js App Router, TypeScript e uma arquitetura editorial orientada a mídia, com suporte a português e inglês.
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- GSAP
+- Lenis
+- MediaPipe Tasks Vision
+- ESLint 9
+- Netlify
+
+## Requisitos
+
+- Node.js 24.x
+- npm
+- Git
+
+A versão do Node está registrada em `.nvmrc` e em `package.json`.
+
+## Instalação
+
+```bash
+npm ci
+```
+
+## Desenvolvimento
+
+Modo padrão:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Modo Webpack:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev:webpack
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Também é possível:
 
-## Learn More
+```bash
+npm run dev -- --webpack
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Qualidade
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Lint:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+Lint com correção automática:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run lint:fix
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TypeScript:
+
+```bash
+npm run typecheck
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+Gate completo:
+
+```bash
+npm run check
+```
+
+O comando `check` executa lint, TypeScript e build.
+
+## Variáveis de ambiente
+
+Use `.env.example` como referência.
+
+Variável principal:
+
+```text
+NEXT_PUBLIC_SITE_URL
+```
+
+Ela define a URL pública utilizada em canonical, metadata, sitemap, robots e compartilhamento social.
+
+Em desenvolvimento:
+
+```text
+http://localhost:3000
+```
+
+Em produção, configure o domínio definitivo.
+
+## Internacionalização
+
+Rotas principais:
+
+```text
+/pt
+/en
+```
+
+As páginas possuem metadata localizada, canonical e hreflang.
+
+## SEO
+
+O projeto gera:
+
+```text
+/icon.png
+/apple-icon.png
+/opengraph-image
+/robots.txt
+/sitemap.xml
+```
+
+Também possui Open Graph e Twitter Card.
+
+## Estrutura principal
+
+```text
+src/
+  app/
+  components/
+    animations/
+    home/
+    i18n/
+    layout/
+    media/
+    ui/
+    work/
+  data/
+  i18n/
+  lib/
+
+public/
+  brand/
+  mediapipe/
+  projects/
+```
+
+## Deploy
+
+O projeto está preparado para Netlify.
+
+Configuração:
+
+```text
+netlify.toml
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+Diretório:
+
+```text
+.next
+```
+
+## CI
+
+Workflow:
+
+```text
+.github/workflows/quality.yml
+```
+
+Executa em push e pull request:
+
+```bash
+npm ci
+npm run check
+```
+
+## Mídia
+
+A arquitetura possui foco editorial por asset e refinamento facial progressivo.
+
+Comportamento dos vídeos:
+
+```text
+mouse hover -> play
+mouse leave -> pause
+teclado -> Enter / Espaço
+touch comum -> preview estático
+```
+
+## Status
+
+Concluído:
+
+- saneamento de CSS
+- arquitetura de mídia
+- performance
+- acessibilidade
+- SEO
+- internacionalização
+
+A etapa final trata os ativos definitivos, otimização das mídias e checklist de publicação.
+
+## Gate de publicação
+
+Antes de publicar definitivamente:
+
+```bash
+npm run release:check
+```
+
+Esse comando verifica conteúdo ainda provisório, como:
+
+- mídia externa de demonstração;
+- vídeos sem poster definitivo;
+- nomes genéricos de projetos;
+- links `href="#"`;
+- URL pública ainda não confirmada.
+
+O refinamento facial por MediaPipe é opcional.
+
+Por padrão:
+
+```text
+NEXT_PUBLIC_ENABLE_FACE_TRACKING=false
+```
+
+Nesse modo o site utiliza os pontos focais editoriais definidos nos próprios dados, evitando carregar o runtime de visão computacional para todos os visitantes.
+
+Para ativar o refinamento em runtime:
+
+```text
+NEXT_PUBLIC_ENABLE_FACE_TRACKING=true
+```

@@ -1,0 +1,73 @@
+DUALIS CREATIVE
+Projeto: 15-anos
+
+Coloque nesta pasta os arquivos definitivos.
+
+NOMES RECOMENDADOS
+
+hero.jpg
+still-one.jpg
+film-one.mp4
+film-one-poster.jpg
+wide-one.jpg
+detail-one.jpg
+film-two.mp4
+film-two-poster.jpg
+
+
+SLOTS
+
+hero
+- imagem
+- abertura do case
+
+still-one
+- imagem
+- formato vertical/editorial
+
+film-one
+- video
+- primeiro filme
+
+film-one-poster
+- imagem
+- poster do primeiro video
+
+wide-one
+- imagem
+- frame horizontal
+
+detail-one
+- imagem
+- detalhe
+
+film-two
+- video
+- segundo filme
+
+film-two-poster
+- imagem
+- poster do segundo video
+
+
+FORMATOS ACEITOS PELO DIAGNOSTICO
+
+Imagens:
+.jpg
+.jpeg
+.png
+.webp
+.avif
+
+Videos:
+.mp4
+.webm
+
+
+IMPORTANTE
+
+Nao precisa renomear agora caso seus arquivos
+ja possuam nomes proprios.
+
+O proximo script pode mapear os arquivos reais
+depois que eles estiverem nesta pasta.

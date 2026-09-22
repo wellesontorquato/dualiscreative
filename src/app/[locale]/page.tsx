@@ -10,6 +10,10 @@ import {
 } from "@/components/home/HomeHeroMobileSources";
 
 import { Hero } from "@/components/home/Hero";
+import {
+  HomeMobileVideoController,
+} from "@/components/home/HomeMobileVideoController";
+
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 
@@ -90,6 +94,7 @@ export default async function HomePage({
         <HomeHeroMobileSources />
         <Hero locale={locale} />
 
+        <HomeMobileVideoController />
         <SelectedWork locale={locale} />
 
         <AboutPreview locale={locale} />

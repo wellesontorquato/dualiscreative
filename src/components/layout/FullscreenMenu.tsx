@@ -82,7 +82,9 @@ export function FullscreenMenu({
   const menuItems = [
     {
       label:
-        "Work",
+        locale === "pt"
+          ? "Trabalhos"
+          : "Work",
 
       href:
         `/${locale}/work`,
@@ -93,7 +95,9 @@ export function FullscreenMenu({
 
     {
       label:
-        "About",
+        locale === "pt"
+          ? "Sobre"
+          : "About",
 
       href:
         `/${locale}/about`,
@@ -104,7 +108,9 @@ export function FullscreenMenu({
 
     {
       label:
-        "Contact",
+        locale === "pt"
+          ? "Contato"
+          : "Contact",
 
       href:
         `/${locale}/contact`,

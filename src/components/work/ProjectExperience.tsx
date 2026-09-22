@@ -13,6 +13,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useSmartMedia } from "@/components/media/useSmartMedia";
 
+import {
+  ProjectMobileMediaController,
+} from "@/components/work/ProjectMobileMediaController";
+
 import type {
   Project,
   ProjectMedia,
@@ -174,6 +178,12 @@ function ProjectMediaFrameInner({
       data-kind={kind}
 
       data-face-aware="true"
+
+      data-project-hero={
+        priority
+          ? "true"
+          : undefined
+      }
 
       data-face={
         faceDetected
@@ -646,6 +656,24 @@ export function ProjectExperience({
     }
 
 
+    /*
+     * DUALIS_MOBILE_PROJECT_NATURAL_FLOW_V2
+     *
+     * No celular o projeto segue fluxo natural.
+     * Desktop preserva integralmente a timeline.
+     */
+    const mobileProjectExperience =
+      window.matchMedia(
+        "(max-width: 800px)",
+      ).matches;
+
+    if (
+      mobileProjectExperience
+    ) {
+      return;
+    }
+
+
     gsap.registerPlugin(
       ScrollTrigger,
     );
@@ -876,6 +904,8 @@ export function ProjectExperience({
       ref={rootRef}
       className="project-experience"
     >
+
+      <ProjectMobileMediaController />
       <h1 className="sr-only">
         {project.title[locale]}
       </h1>

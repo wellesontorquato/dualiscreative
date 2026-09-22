@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 import { IntroLoader } from "@/components/animations/IntroLoader";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { ContactSection } from "@/components/home/ContactSection";
+import {
+  HomeHeroMobileSources,
+} from "@/components/home/HomeHeroMobileSources";
+
 import { Hero } from "@/components/home/Hero";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -82,6 +86,8 @@ export default async function HomePage({
       <CustomCursor />
 
       <main id="main-content" tabIndex={-1} className="home-page-shell">
+
+        <HomeHeroMobileSources />
         <Hero locale={locale} />
 
         <SelectedWork locale={locale} />

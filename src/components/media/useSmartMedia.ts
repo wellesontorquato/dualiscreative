@@ -289,10 +289,53 @@ export function useSmartMedia({
                   }
 
 
+                  /*
+                   * DUALIS_MOBILE_FACE_PRIORITY_V2
+                   *
+                   * Desktop:
+                   * preserva exatamente os valores existentes.
+                   *
+                   * Mobile:
+                   * dá mais autoridade ao rosto.
+                   *
+                   * Hero:
+                   * recebe prioridade ainda maior.
+                   */
+
+                  const isMobile =
+                    typeof window !== "undefined" &&
+                    window.matchMedia(
+                      "(max-width: 800px)",
+                    ).matches;
+
+
+                  const isProjectHero =
+                    isMobile &&
+                    Boolean(
+                      media.closest(
+                        '[data-project-hero="true"]',
+                      ),
+                    );
+
+
                   const strength =
                     kind === "image"
-                      ? imageStrength
-                      : videoStrength;
+                      ? isMobile
+                        ? isProjectHero
+                          ? 1
+                          : Math.max(
+                              imageStrength,
+                              0.92,
+                            )
+                        : imageStrength
+                      : isMobile
+                        ? isProjectHero
+                          ? 0.64
+                          : Math.max(
+                              videoStrength,
+                              0.46,
+                            )
+                        : videoStrength;
 
 
                   setFocus(

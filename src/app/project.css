@@ -3752,3 +3752,154 @@ video {
 
 
 /* DUALIS_PROJECT_MEDIA_CURRENT_END */
+
+/* DUALIS_PROJECT_MOBILE_NATURAL_FLOW_V2_START */
+
+
+/* =========================================================
+   PROJECT / MOBILE
+   NATURAL FLOW + AUTO VIDEO + FACE PRIORITY
+========================================================= */
+
+@media (
+  max-width:
+  800px
+) {
+
+  /*
+   * Vídeos deixam de depender de hover.
+   */
+
+  .project-media-frame[
+    data-hover-video="true"
+  ] {
+    cursor:
+      default;
+  }
+
+
+  .project-media-frame[
+    data-kind="video"
+  ]
+  video {
+    touch-action:
+      manipulation;
+  }
+
+
+  /*
+   * O crop facial pode se mover rapidamente
+   * sem parecer um corte brusco.
+   */
+
+  .project-media-frame[
+    data-face-aware="true"
+  ]
+  .project-media-frame__asset {
+    transition:
+      object-position
+        440ms
+        cubic-bezier(
+          0.22,
+          1,
+          0.36,
+          1
+        ),
+      filter
+        420ms
+        ease;
+  }
+
+
+  /*
+   * Hero tem crop vertical mais agressivo,
+   * então damos resposta ainda mais direta.
+   */
+
+  .project-media-frame[
+    data-project-hero="true"
+  ]
+  .project-media-frame__asset {
+    transition:
+      object-position
+        340ms
+        cubic-bezier(
+          0.22,
+          1,
+          0.36,
+          1
+        ),
+      filter
+        420ms
+        ease;
+  }
+
+
+  /*
+   * Quando o IntersectionObserver
+   * iniciou a reprodução, removemos o play.
+   */
+
+  .project-media-frame[
+    data-mobile-video-active="true"
+  ]
+  .project-media-frame__play {
+    opacity:
+      0 !important;
+
+    transform:
+      translateY(-50%)
+      scale(0.86) !important;
+
+    pointer-events:
+      none;
+  }
+
+
+  /*
+   * Sem pin/sticky novo no mobile.
+   * Os blocos respiram dentro do scroll normal.
+   */
+
+  .project-sequence
+  .project-media-frame[
+    data-kind="video"
+  ] {
+    margin-top:
+      clamp(
+        1rem,
+        4vw,
+        1.8rem
+      );
+
+    margin-bottom:
+      clamp(
+        1rem,
+        4vw,
+        1.8rem
+      );
+  }
+
+}
+
+
+@media (
+  max-width:
+  800px
+) and (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .project-media-frame[
+    data-face-aware="true"
+  ]
+  .project-media-frame__asset {
+    transition:
+      none !important;
+  }
+
+}
+
+
+/* DUALIS_PROJECT_MOBILE_NATURAL_FLOW_V2_END */

@@ -46,9 +46,10 @@ export async function generateMetadata({
     siteCopy[locale];
 
   return {
-    title:
-      copy.meta.title,
-
+    title: {
+      absolute:
+        copy.meta.title,
+    },
     description:
       copy.meta.description,
 

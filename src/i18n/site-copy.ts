@@ -9,7 +9,7 @@ export function isLocale(value: string): value is Locale {
 export const siteCopy = {
   pt: {
     meta: {
-      title: "Dualis Creative — Estúdio de criação visual",
+      title: "Dualis Creative - Estúdio de criação visual",
       description:
         "Fotografia, filme e direção visual. Duas visões. Uma história.",
     },
@@ -88,7 +88,7 @@ export const siteCopy = {
 
   en: {
     meta: {
-      title: "Dualis Creative — Creative Visual Studio",
+      title: "Dualis Creative - Creative Visual Studio",
       description:
         "Photography, film and visual direction. Two visions. One story.",
     },

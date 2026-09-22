@@ -166,7 +166,7 @@ export function buildRouteMetadata(
 
 
   const socialTitle =
-    `${metadata.title} â€” Dualis Creative`;
+    `${metadata.title} - Dualis Creative`;
 
 
   return {

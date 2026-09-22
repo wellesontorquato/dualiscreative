@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Dualis Creative",
 
     template:
-      "%s â€” Dualis Creative",
+      "%s - Dualis Creative",
   },
 
 
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
       "Dualis Creative",
 
     title:
-      "Dualis Creative â€” Creative Visual Studio",
+      "Dualis Creative - Creative Visual Studio",
 
     description:
       "Photography, film and visual direction. Two visions. One story.",
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
       "summary_large_image",
 
     title:
-      "Dualis Creative â€” Creative Visual Studio",
+      "Dualis Creative - Creative Visual Studio",
 
     description:
       "Photography, film and visual direction. Two visions. One story.",
